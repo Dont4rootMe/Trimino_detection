@@ -70,9 +70,27 @@ class ColorDials(QWidget):
         self.blue_slider.valueChanged.connect(self.engine.enhance_blue)
         self.layout_enhancers.addRow('blue:', self.blue_slider)
 
+        # creation of layout for binarization slider
+        self.layout_binarize = QHBoxLayout()
+        self.use_binarize = QLabel('Binarize: ')
+        self.layout_binarize.addWidget(self.use_binarize)
+        
+        self.binarize_slider = QSlider(Qt.Orientation.Horizontal)
+        self.binarize_slider.setRange(1, 255)
+        self.binarize_slider.setValue(128)
+        self.binarize_slider.setFixedSize(QSize(200, 30))
+        self.binarize_slider.valueChanged.connect(self.engine.binarize)
+        self.layout_binarize.addWidget(self.binarize_slider)
+
+        # adding button for inverting binarization
+        self.invert_binarize = QCheckBox('Invert binarization: ')
+        self.invert_binarize.stateChanged.connect(self.engine.invert_binarize)
+
         self.layout = QVBoxLayout()
         self.layout.addItem(self.layout_dials)
         self.layout.addItem(self.layout_enhancers)
+        self.layout.addItem(self.layout_binarize)
+        self.layout.addWidget(self.invert_binarize)
         self.layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.setLayout(self.layout)
 
@@ -87,3 +105,6 @@ class ColorDials(QWidget):
         self.red_slider.setValue(300)
         self.green_slider.setValue(300)
         self.blue_slider.setValue(300)
+
+        self.binarize_slider.setValue(128)
+        self.invert_binarize.setChecked(False)

@@ -11,10 +11,7 @@ class ImagePair(QWidget):
         self.layout = QHBoxLayout()
         self.setLayout(self.layout)
 
-        self.setFixedSize(QSize(820, 390))
-
-        # self.setMaximumSize(QSize(800, 700))
-        # self.setMinimumSize(QSize(630, 300))
+        self.setFixedSize(QSize(1080, 500))
 
         self.OriginalImage = OriginalImage(self, engine)
         self.layout.addWidget(self.OriginalImage)

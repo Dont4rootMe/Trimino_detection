@@ -9,7 +9,7 @@ class ImageBoxAbstract(QLabel):
         self.engine.add_reset_action(self.actionOnRefreshReset())
 
         self.setScaledContents(True)
-        self.setFixedSize(QSize(380, 380))
+        self.setFixedSize(QSize(500, 500))
         # self.setMaximumSize(QSize(650, 300))
         # self.setMinimumSize(QSize(300, 300))
 

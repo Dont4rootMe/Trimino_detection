@@ -5,11 +5,11 @@ name = "pypi"
 
 [packages]
 opencv-python = "*"
-pyqt6 = "*"
 pillow = "*"
 numpy = "*"
 matplotlib = "*"
 pandas = "*"
+pyqt6 = "*"
 
 [dev-packages]
 
